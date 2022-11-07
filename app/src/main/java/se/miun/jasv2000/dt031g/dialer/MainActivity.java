@@ -21,20 +21,28 @@ public class MainActivity extends AppCompatActivity {
         View view = binding.getRoot();
         setContentView(view);
 
-        openActivityDial();
-
-
-
-    }
-
-    public void openActivityDial() {
-        //Button button_dial = (Button) findViewById(R.id.button_dial);
         binding.buttonDial.setOnClickListener(v -> {
-            Intent intent = new Intent("android.intent.category.DIAL");
-            startActivity(intent);
-        }
-        );
+            startActivity(new Intent(this, DialActivity.class));
+        });
+
+        binding.buttonCallList.setOnClickListener(v -> {
+            startActivity(new Intent(this, CallListActivity.class));
+        });
+
+
+
     }
+
+    //public void openActivityDial() {
+        //Button button_dial = (Button) findViewById(R.id.button_dial);
+      //  binding.buttonDial.setOnClickListener(v -> {
+            //startActivity(new Intent(this, DialActivity.class));
+
+            //Intent intent = new Intent("android.intent.category.DIAL");
+            //startActivity(intent);
+        //}
+        //);
+    //}
 
 
 
