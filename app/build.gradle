@@ -6,6 +6,11 @@ android {
     namespace 'se.miun.jasv2000.dt031g.dialer'
     compileSdk 33
 
+    buildFeatures {
+        viewBinding true
+    }
+
+
     defaultConfig {
         applicationId "se.miun.jasv2000.dt031g.dialer"
         minSdk 23

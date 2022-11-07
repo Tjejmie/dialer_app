@@ -10,4 +10,5 @@
     <string name="dialer_call_list">Call list</string>
     <string name="dialer_dial">Dial</string>
     <string name="dialer_header">What would you like to do?</string>
+    <string name="dial_string">This is the activity for Dial</string>
 </resources>
