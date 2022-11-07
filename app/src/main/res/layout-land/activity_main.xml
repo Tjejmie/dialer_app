@@ -13,25 +13,23 @@
         android:text="@string/dialer_map"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintHorizontal_bias="0.694"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.584"
+        app:layout_constraintTop_toBottomOf="@+id/button_call_list"
+        app:layout_constraintVertical_bias="0.0"
         app:strokeColor="@color/black"
         app:strokeWidth="1dp"/>
 
-
     <Button
-        android:id="@+id/button_about"
+        android:id="@+id/button_dial"
         android:layout_width="220dp"
         android:layout_height="57dp"
-        android:text="@string/dialer_about"
+        android:text="@string/dialer_dial"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintEnd_toStartOf="@+id/button_call_list"
+        app:layout_constraintHorizontal_bias="0.934"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.669"
         app:strokeColor="@color/black"
         app:strokeWidth="1dp"/>
 
@@ -41,9 +39,11 @@
         android:layout_height="57dp"
         android:text="@string/dialer_settings"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/button_map"
+        app:layout_constraintHorizontal_bias="0.934"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_dial"
+        app:layout_constraintVertical_bias="0.0"
         app:strokeColor="@color/black"
         app:strokeWidth="1dp"/>
 
@@ -54,24 +54,24 @@
         android:text="@string/dialer_call_list"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintHorizontal_bias="0.694"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.415"
         app:strokeColor="@color/black"
         app:strokeWidth="1dp"/>
 
     <Button
-        android:id="@+id/button_dial"
+        android:id="@+id/button_about"
         android:layout_width="220dp"
         android:layout_height="57dp"
-        android:text="@string/dialer_dial"
+        android:layout_marginBottom="16dp"
+        android:text="@string/dialer_about"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.499"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.33"
+        app:layout_constraintTop_toBottomOf="@+id/button_settings"
+        app:layout_constraintVertical_bias="0.0"
         app:strokeColor="@color/black"
         app:strokeWidth="1dp"/>
 
@@ -81,9 +81,11 @@
         android:layout_height="wrap_content"
         android:text="@string/dialer_header"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/button_dial"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.514"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.184" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
