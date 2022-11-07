@@ -12,22 +12,18 @@ import se.miun.jasv2000.dt031g.dialer.databinding.ActivityMainBinding;
 
 
 public class MainActivity extends AppCompatActivity {
-    private ActivityMainBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding = ActivityMainBinding.inflate(getLayoutInflater());
+        se.miun.jasv2000.dt031g.dialer.databinding.ActivityMainBinding binding = ActivityMainBinding.inflate(getLayoutInflater());
         View view = binding.getRoot();
         setContentView(view);
 
-        binding.buttonDial.setOnClickListener(v -> {
-            startActivity(new Intent(this, DialActivity.class));
-        });
+        binding.buttonDial.setOnClickListener(v -> startActivity(new Intent(this, DialActivity.class)));
 
-        binding.buttonCallList.setOnClickListener(v -> {
-            startActivity(new Intent(this, CallListActivity.class));
-        });
+        binding.buttonCallList.setOnClickListener(v -> startActivity(new Intent(this, CallListActivity.class)));
+        binding.buttonSettings.setOnClickListener(v -> startActivity(new Intent(this, SettingsActivity.class)));
 
 
 
