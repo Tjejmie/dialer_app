@@ -13,7 +13,6 @@
     <string name="dial_string">This is the activity for Dial</string>
     <string name="call_list_string">This is the activity for Call list</string>
     <string name="title_activity_settings">SettingsActivity</string>
-
     <!-- Preference Titles -->
     <string name="messages_header">Messages</string>
     <string name="sync_header">Sync</string>
