@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
 
         binding.buttonCallList.setOnClickListener(v -> startActivity(new Intent(this, CallListActivity.class)));
         binding.buttonSettings.setOnClickListener(v -> startActivity(new Intent(this, SettingsActivity.class)));
-
+        binding.buttonMap.setOnClickListener(v -> startActivity(new Intent(this, MapsActivity.class)));
 
 
     }

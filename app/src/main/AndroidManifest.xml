@@ -12,26 +12,34 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Dialer"
         tools:targetApi="31">
+
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyChCTxjAz2NWkfAKqIpzDkY38EP5XoTVLA" />
+
+        <activity
+            android:name=".MapsActivity"
+            android:exported="false"/>
+
         <activity
             android:name=".SettingsActivity"
             android:exported="true"
-            android:parentActivityName=".MainActivity">
-        </activity>
+            android:parentActivityName=".MainActivity"/>
         <activity
             android:name=".CallListActivity"
             android:exported="true"
-            android:parentActivityName=".MainActivity">
-        </activity>
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".DialActivity"
             android:exported="true"
-            android:parentActivityName=".MainActivity">
-        </activity>
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
 
