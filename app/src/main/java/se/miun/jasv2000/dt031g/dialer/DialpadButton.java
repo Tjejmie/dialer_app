@@ -14,19 +14,16 @@ import androidx.appcompat.widget.AppCompatTextView;
 
 
 public class DialpadButton extends ConstraintLayout {
-    String title;
-    String message;
+
     public DialpadButton(@NonNull Context context) {
         super(context);
         init(context);
 
     }
 
-    public DialpadButton(@NonNull Context context, @Nullable AttributeSet attrs) {
-        super(context, attrs);
-
+    private void init(Context context) {
         View.inflate(getContext(), R.layout.view_dialpad_button, this);
-        @SuppressLint("Recycle") TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.DialpadButton);
+        @SuppressLint("Recycle") TypedArray a = context.obtainStyledAttributes(R.styleable.DialpadButton);
         CharSequence title = a.getString(R.styleable.DialpadButton_title);
         CharSequence message = a.getString(R.styleable.DialpadButton_message);
         if (title != null)
@@ -36,9 +33,20 @@ public class DialpadButton extends ConstraintLayout {
     }
 
 
+    public DialpadButton(@NonNull Context context, @Nullable AttributeSet attrs) {
+        super(context, attrs);
+        init(context, attrs);
+    }
 
-    private void init(Context context){
-        inflate(context, R.layout.view_dialpad_button, this);
+    private void init(Context context, AttributeSet attrs){
+        View.inflate(getContext(), R.layout.view_dialpad_button, this);
+        @SuppressLint("Recycle") TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.DialpadButton);
+        CharSequence title = a.getString(R.styleable.DialpadButton_title);
+        CharSequence message = a.getString(R.styleable.DialpadButton_message);
+        if (title != null)
+            setTitle(title.toString());
+        if (title != null)
+            setMessage(message.toString());
     }
 
     public void setTitle(String s) {
