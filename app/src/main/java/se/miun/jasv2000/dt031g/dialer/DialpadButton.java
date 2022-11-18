@@ -40,6 +40,8 @@ public class DialpadButton extends ConstraintLayout {
             setTitle(title.toString());
         if (title != null)
             setMessage(message.toString());
+
+        setOnClickListener(view -> animateClick());
     }
 
     public void setTitle(String s) {
@@ -64,5 +66,10 @@ public class DialpadButton extends ConstraintLayout {
         }
         TextView myTextView = findViewById(R.id.dialpad_message);
         myTextView.setText(s.toUpperCase());
+    }
+
+    private void animateClick(){
+
+        animate().rotationBy(360).start();
     }
 }
