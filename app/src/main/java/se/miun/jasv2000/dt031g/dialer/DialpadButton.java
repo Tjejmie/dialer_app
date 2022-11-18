@@ -22,14 +22,7 @@ public class DialpadButton extends ConstraintLayout {
     }
 
     private void init(Context context) {
-        View.inflate(getContext(), R.layout.view_dialpad_button, this);
-        @SuppressLint("Recycle") TypedArray a = context.obtainStyledAttributes(R.styleable.DialpadButton);
-        CharSequence title = a.getString(R.styleable.DialpadButton_title);
-        CharSequence message = a.getString(R.styleable.DialpadButton_message);
-        if (title != null)
-            setTitle(title.toString());
-        if (title != null)
-            setMessage(message.toString());
+        inflate(context, R.layout.view_dialpad_button, this);
     }
 
 
@@ -39,7 +32,7 @@ public class DialpadButton extends ConstraintLayout {
     }
 
     private void init(Context context, AttributeSet attrs){
-        View.inflate(getContext(), R.layout.view_dialpad_button, this);
+        inflate(getContext(), R.layout.view_dialpad_button, this);
         @SuppressLint("Recycle") TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.DialpadButton);
         CharSequence title = a.getString(R.styleable.DialpadButton_title);
         CharSequence message = a.getString(R.styleable.DialpadButton_message);
