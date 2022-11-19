@@ -13,6 +13,7 @@
     <string name="dial_string">This is the activity for Dial</string>
     <string name="call_list_string">This is the activity for Call list</string>
     <string name="title_activity_settings">SettingsActivity</string>
+    <string name="ok">OK</string>
     <!-- Preference Titles -->
     <string name="messages_header">Messages</string>
     <string name="sync_header">Sync</string>
@@ -28,4 +29,14 @@
     </string>
     <string name="attachment_summary_off">Only download attachments when manually requested</string>
     <string name="title_activity_maps">MapsActivity</string>
+
+    <!-- About Dialog -->
+    <string name="about_info">This app is supposed to mimic the keypad on a phone.\nThe
+        app will consist of activities to: \n
+                    • Enter numbers to dial \n
+                    • See previously dialed numbers \n
+                    • Change the keypad settings \n
+                    • Show on a Map where previously calls are dialed from</string>
+    <string name="about_header">About</string>
+
 </resources>
