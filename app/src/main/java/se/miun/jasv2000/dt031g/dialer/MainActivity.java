@@ -27,18 +27,16 @@ public class MainActivity extends AppCompatActivity {
 
         // Create dialog
         binding.buttonAbout.setOnClickListener(v -> {
+            String aboutInfo = getResources().getString(R.string.about_info);
+            String aboutHeader = getResources().getString(R.string.about_header);
+            String ok = getResources().getString(R.string.ok);
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
-            builder.setTitle("About");
-            builder.setMessage("This app is supposed to mimic the keypad on a phone. " +
-                    "The app will consist of activities to: \r\n" +
-                    "• Enter numbers to dial \r\n" +
-                    "• See previously dialed numbers \r\n" +
-                    "• Change the keypad settings \r\n" +
-                    "• Show on a Map where previously calls are dialed from \r\n");
+            builder.setTitle(aboutHeader);
+            builder.setMessage(aboutInfo);
             builder.setCancelable(true);
 
             builder.setPositiveButton(
-                    "OK",
+                    ok,
                     (dialog, id) -> dialog.cancel());
 
             AlertDialog alert = builder.create();
@@ -48,3 +46,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
 }
+
+
+
+
+
