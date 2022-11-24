@@ -9,6 +9,8 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 
+import com.google.android.material.snackbar.Snackbar;
+
 import java.util.concurrent.atomic.AtomicBoolean;
 
 import se.miun.jasv2000.dt031g.dialer.databinding.ActivityMainBinding;
@@ -53,7 +55,8 @@ public class MainActivity extends AppCompatActivity {
 
             }
             else{
-                // Vad som ska visas när knappen redan klickats en gång
+                Snackbar mySnackbar = Snackbar.make(view, R.string.about_snackbar, Snackbar.LENGTH_SHORT);
+                mySnackbar.show();
             }
         });
 

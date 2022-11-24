@@ -39,6 +39,7 @@
                     • Change the keypad settings \n
                     • Show on a Map where previously calls are dialed from</string>
     <string name="about_header">About</string>
+    <string name="about_snackbar">You have already seen the about-dialog before.</string>
 
 
 
