@@ -38,7 +38,7 @@ public class DialpadButton extends ConstraintLayout {
         CharSequence message = a.getString(R.styleable.DialpadButton_message);
         if (title != null)
             setTitle(title.toString());
-        if (title != null)
+        if (message != null)
             setMessage(message.toString());
 
         setOnClickListener(view -> animateClick());

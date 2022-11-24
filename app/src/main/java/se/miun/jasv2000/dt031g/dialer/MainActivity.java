@@ -1,16 +1,23 @@
 package se.miun.jasv2000.dt031g.dialer;
 
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+
+import java.util.concurrent.atomic.AtomicBoolean;
 
 import se.miun.jasv2000.dt031g.dialer.databinding.ActivityMainBinding;
 
 
 public class MainActivity extends AppCompatActivity {
+    boolean notClicked;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,24 +32,54 @@ public class MainActivity extends AppCompatActivity {
         binding.buttonSettings.setOnClickListener(v -> startActivity(new Intent(this, SettingsActivity.class)));
         binding.buttonMap.setOnClickListener(v -> startActivity(new Intent(this, MapsActivity.class)));
 
-        // Create dialog
+
         binding.buttonAbout.setOnClickListener(v -> {
-            String aboutInfo = getResources().getString(R.string.about_info);
-            String aboutHeader = getResources().getString(R.string.about_header);
-            String ok = getResources().getString(R.string.ok);
-            AlertDialog.Builder builder = new AlertDialog.Builder(this);
-            builder.setTitle(aboutHeader);
-            builder.setMessage(aboutInfo);
-            builder.setCancelable(true);
+            if(!notClicked)
+            {
+                notClicked = true;
+                String aboutInfo = getResources().getString(R.string.about_info);
+                String aboutHeader = getResources().getString(R.string.about_header);
+                String ok = getResources().getString(R.string.ok);
+                AlertDialog.Builder builder = new AlertDialog.Builder(this);
+                builder.setTitle(aboutHeader);
+                builder.setMessage(aboutInfo);
+                builder.setCancelable(true);
+                builder.setPositiveButton(
+                        ok,
+                        (dialog, id) -> dialog.cancel());
 
-            builder.setPositiveButton(
-                    ok,
-                    (dialog, id) -> dialog.cancel());
+                AlertDialog alert = builder.create();
+                alert.show();
 
-            AlertDialog alert = builder.create();
-            alert.show();
-
+            }
+            else{
+                // Vad som ska visas när knappen redan klickats en gång
+            }
         });
+
+
+    }
+
+
+
+    @Override
+    protected void onSaveInstanceState(@NonNull Bundle outState) {
+        Log.d("MainActivity","onSaveInstanceState: aboutClicked=" + notClicked);
+
+        outState.putBoolean("key_value", notClicked);
+        super.onSaveInstanceState(outState);
+
+
+
+    }
+
+    @Override
+    protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+
+        notClicked = savedInstanceState.getBoolean("key_value", false);
+
+
     }
 
 }
