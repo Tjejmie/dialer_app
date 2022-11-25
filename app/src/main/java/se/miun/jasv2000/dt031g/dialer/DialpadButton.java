@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.util.AttributeSet;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
@@ -14,6 +15,8 @@ import androidx.appcompat.widget.AppCompatTextView;
 
 
 public class DialpadButton extends ConstraintLayout {
+
+    String title = "asd";
 
     public DialpadButton(@NonNull Context context) {
         super(context);
@@ -41,19 +44,18 @@ public class DialpadButton extends ConstraintLayout {
         if (message != null)
             setMessage(message.toString());
 
+
+
         setOnClickListener(view -> animateClick());
     }
 
     public void setTitle(String s) {
-        // Char options for title
-        String titleOptions = "0123456789*#";
+
+
         // Return only one char
-        s = s.substring(0,1);
-        // Check if char exist in titleOption, if not 1 will be default value
-        int result = titleOptions.indexOf(s);
-        if (result == -1){
-            s = "1";
-        }
+        s = s.substring(0, 1);
+        
+        title = s;
         // Set value for title
         TextView myTextView = findViewById(R.id.dialpad_title);
         myTextView.setText(s);
@@ -69,7 +71,14 @@ public class DialpadButton extends ConstraintLayout {
     }
 
     private void animateClick(){
+        //SoundPlayer soundplayer = se.miun.jasv2000.dt031g.dialer.SoundPlayer.getInstance(getContext());
+        SoundPlayer.playSound(this);
+
 
         animate().rotationBy(360).start();
+    }
+
+    public String getTitle(){
+        return title;
     }
 }

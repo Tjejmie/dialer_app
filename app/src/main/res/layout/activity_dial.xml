@@ -8,43 +8,15 @@
 
     tools:context=".DialActivity">
 
-    <se.miun.jasv2000.dt031g.dialer.DialpadButton
-        android:id="@+id/dialpad_button_1"
-        android:layout_width="78dp"
-        android:layout_height="130dp"
-        android:layout_marginTop="40dp"
-        app:layout_constraintBottom_toTopOf="@+id/myButton"
+    <se.miun.jasv2000.dt031g.dialer.Dialpad
+        android:id="@+id/dialpad"
+        android:layout_width="0dp"
+        android:layout_height="889dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="1dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:message="ABf"
-        app:title="1" />
-
-    <se.miun.jasv2000.dt031g.dialer.DialpadButton
-        android:id="@+id/myButton"
-        android:layout_width="217dp"
-        android:layout_height="215dp"
-
-
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.473"
-        app:message="ghi"
-        app:title="3" />
-
-    <se.miun.jasv2000.dt031g.dialer.DialpadButton
-        android:id="@+id/dialpad_button_2"
-        android:layout_width="60dp"
-        android:layout_height="75dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/myButton"
-        app:message="DEF"
-        app:title="2" />
-
-
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

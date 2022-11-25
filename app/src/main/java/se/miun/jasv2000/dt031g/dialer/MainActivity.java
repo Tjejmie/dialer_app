@@ -67,21 +67,16 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onSaveInstanceState(@NonNull Bundle outState) {
-        Log.d("MainActivity","onSaveInstanceState: aboutClicked=" + notClicked);
 
         outState.putBoolean("key_value", notClicked);
         super.onSaveInstanceState(outState);
-
-
 
     }
 
     @Override
     protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
-
         notClicked = savedInstanceState.getBoolean("key_value", false);
-
 
     }
 
