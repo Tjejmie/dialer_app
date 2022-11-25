@@ -14,5 +14,10 @@ public class DialActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dial);
 
+
+        //När användaren lämnar DialActivity måste du frigöra resurserna som din
+        //SoundPlayer använder genom att anropa destroy-metoden i SoundPlayer. Gör
+        //detta anrop i ett lämplig callback-metod i DialActivity livscykel.
+
     }
 }
