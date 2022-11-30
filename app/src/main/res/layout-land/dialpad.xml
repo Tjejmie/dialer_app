@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+
+    tools:context=".DialActivity">
+
+    <se.miun.jasv2000.dt031g.dialer.DialpadButton
+        android:id="@+id/dialpadButton13"
+        android:layout_width="0dp"
+
+        android:layout_height="0dp"
+        android:layout_marginBottom="1dp"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent=".33"
+        app:layout_constraintStart_toEndOf="@+id/dialpadButton18"
+        app:layout_constraintTop_toBottomOf="@+id/dialpadButton14"
+        app:layout_constraintWidth_percent="0.25"
+        app:title="@string/title_pound">
+
+
+    </se.miun.jasv2000.dt031g.dialer.DialpadButton>
+
+    <se.miun.jasv2000.dt031g.dialer.DialpadButton
+        android:id="@+id/dialpadButton14"
+        android:layout_width="0dp"
+
+        android:layout_height="0dp"
+        android:layout_marginBottom="1dp"
+
+        app:layout_constraintBottom_toTopOf="@+id/dialpadButton13"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent=".33"
+        app:layout_constraintStart_toEndOf="@+id/dialpadButton19"
+        app:layout_constraintTop_toBottomOf="@+id/dialpadButton22"
+        app:layout_constraintWidth_percent="0.25"
+        app:message="@string/message_zero"
+        app:title="@string/title_zero">
+
+    </se.miun.jasv2000.dt031g.dialer.DialpadButton>
+
+    <se.miun.jasv2000.dt031g.dialer.DialpadButton
+        android:id="@+id/dialpadButton15"
+        android:layout_width="0dp"
+
+        android:layout_height="0dp"
+        android:layout_marginBottom="1dp"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/dialpadButton17"
+        app:layout_constraintHeight_percent=".33"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/dialpadButton18"
+        app:layout_constraintWidth_percent="0.25"
+        app:message="@string/message_nine"
+        app:title="@string/title_nine" />
+
+    <se.miun.jasv2000.dt031g.dialer.DialpadButton
+        android:id="@+id/dialpadButton16"
+        android:layout_width="0dp"
+
+        android:layout_height="0dp"
+        android:layout_marginEnd="222dp"
+
+        android:layout_marginBottom="1dp"
+        app:layout_constraintBottom_toTopOf="@+id/dialpadButton19"
+        app:layout_constraintEnd_toStartOf="@+id/dialpadButton21"
+        app:layout_constraintHeight_percent=".33"
+        app:layout_constraintStart_toEndOf="@+id/dialpadButton23"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_percent="0.25"
+        app:message="@string/message_two"
+        app:title="@string/title_two">
+
+    </se.miun.jasv2000.dt031g.dialer.DialpadButton>
+
+    <se.miun.jasv2000.dt031g.dialer.DialpadButton
+        android:id="@+id/dialpadButton17"
+        android:layout_width="0dp"
+
+        android:layout_height="0dp"
+
+        android:layout_marginTop="1dp"
+        android:layout_marginBottom="1dp"
+        app:layout_constraintBottom_toTopOf="@+id/dialpadButton15"
+        app:layout_constraintEnd_toStartOf="@+id/dialpadButton14"
+        app:layout_constraintHeight_percent=".33"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/dialpadButton19"
+        app:layout_constraintTop_toBottomOf="@+id/dialpadButton22"
+        app:layout_constraintWidth_percent="0.25"
+        app:message="@string/message_six"
+        app:title="@string/title_six">
+
+    </se.miun.jasv2000.dt031g.dialer.DialpadButton>
+
+    <se.miun.jasv2000.dt031g.dialer.DialpadButton
+        android:id="@+id/dialpadButton18"
+        android:layout_width="0dp"
+
+        android:layout_height="0dp"
+        android:layout_marginEnd="222dp"
+
+        android:layout_marginBottom="1dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/dialpadButton13"
+        app:layout_constraintHeight_percent=".33"
+        app:layout_constraintStart_toEndOf="@+id/dialpadButton20"
+        app:layout_constraintTop_toBottomOf="@+id/dialpadButton19"
+        app:layout_constraintWidth_percent="0.25"
+        app:message="@string/message_eight"
+        app:title="@string/title_eight">
+
+    </se.miun.jasv2000.dt031g.dialer.DialpadButton>
+
+    <se.miun.jasv2000.dt031g.dialer.DialpadButton
+        android:id="@+id/dialpadButton19"
+        android:layout_width="0dp"
+
+        android:layout_height="0dp"
+        android:layout_marginEnd="222dp"
+
+        android:layout_marginBottom="1dp"
+        app:layout_constraintBottom_toTopOf="@+id/dialpadButton18"
+        app:layout_constraintEnd_toStartOf="@+id/dialpadButton14"
+        app:layout_constraintHeight_percent=".33"
+        app:layout_constraintStart_toEndOf="@+id/dialpadButton48"
+        app:layout_constraintTop_toBottomOf="@+id/dialpadButton16"
+        app:layout_constraintWidth_percent="0.25"
+        app:message="@string/message_five"
+        app:title="@string/title_five" />
+
+    <se.miun.jasv2000.dt031g.dialer.DialpadButton
+        android:id="@+id/dialpadButton20"
+        android:layout_width="0dp"
+
+        android:layout_height="0dp"
+        android:layout_marginEnd="2dp"
+
+        android:layout_marginBottom="1dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/dialpadButton18"
+        app:layout_constraintHeight_percent=".33"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dialpadButton48"
+        app:layout_constraintWidth_percent="0.25"
+        app:message="@string/message_seven"
+        app:title="@string/title_seven">
+
+    </se.miun.jasv2000.dt031g.dialer.DialpadButton>
+
+    <se.miun.jasv2000.dt031g.dialer.DialpadButton
+        android:id="@+id/dialpadButton48"
+        android:layout_width="0dp"
+
+        android:layout_height="0dp"
+        android:layout_marginEnd="2dp"
+
+        android:layout_marginBottom="1dp"
+        app:layout_constraintBottom_toTopOf="@+id/dialpadButton20"
+        app:layout_constraintEnd_toStartOf="@+id/dialpadButton19"
+        app:layout_constraintHeight_percent=".33"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dialpadButton23"
+        app:layout_constraintWidth_percent="0.25"
+        app:message="@string/message_four"
+        app:title="@string/title_four" />
+
+    <se.miun.jasv2000.dt031g.dialer.DialpadButton
+        android:id="@+id/dialpadButton21"
+        android:layout_width="0dp"
+
+        android:layout_height="0dp"
+
+        app:layout_constraintBottom_toTopOf="@+id/dialpadButton14"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent=".33"
+        app:layout_constraintStart_toEndOf="@+id/dialpadButton16"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintWidth_percent="0.25"
+        app:title="@string/title_star" />
+
+    <se.miun.jasv2000.dt031g.dialer.DialpadButton
+        android:id="@+id/dialpadButton22"
+        android:layout_width="0dp"
+
+        android:layout_height="0dp"
+        android:layout_marginBottom="1dp"
+
+        app:layout_constraintBottom_toTopOf="@+id/dialpadButton14"
+        app:layout_constraintEnd_toEndOf="@+id/dialpadButton17"
+        app:layout_constraintHeight_percent=".33"
+        app:layout_constraintStart_toEndOf="@+id/dialpadButton16"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_percent="0.25"
+        app:message="@string/message_three"
+        app:title="@string/title_three">
+
+    </se.miun.jasv2000.dt031g.dialer.DialpadButton>
+
+    <se.miun.jasv2000.dt031g.dialer.DialpadButton
+        android:id="@+id/dialpadButton23"
+        android:layout_width="0dp"
+
+        android:layout_height="0dp"
+        android:layout_marginEnd="2dp"
+
+        android:layout_marginBottom="1dp"
+        app:layout_constraintBottom_toTopOf="@+id/dialpadButton48"
+        app:layout_constraintEnd_toStartOf="@+id/dialpadButton16"
+        app:layout_constraintHeight_percent=".33"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_percent="0.25"
+        app:title="@string/title_one">
+
+    </se.miun.jasv2000.dt031g.dialer.DialpadButton>
+</androidx.constraintlayout.widget.ConstraintLayout>
