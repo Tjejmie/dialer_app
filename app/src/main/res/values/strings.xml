@@ -41,6 +41,26 @@
     <string name="about_header">About</string>
     <string name="about_snackbar">You have already seen the about-dialog before.</string>
 
-
-
+    <!-- Activity dial -->
+    <string name="title_one">1</string>
+    <string name="message_two">ABC</string>
+    <string name="title_two">2</string>
+    <string name="title_three">3</string>
+    <string name="message_three">DEF</string>
+    <string name="title_four">4</string>
+    <string name="message_four">GHI</string>
+    <string name="title_five">5</string>
+    <string name="message_five">JKL</string>
+    <string name="title_six">6</string>
+    <string name="message_six">MNO</string>
+    <string name="title_seven">7</string>
+    <string name="message_seven">PQRS</string>
+    <string name="title_eight">8</string>
+    <string name="message_eight">TUV</string>
+    <string name="title_nine">9</string>
+    <string name="message_nine">WXYZ</string>
+    <string name="title_pound">#</string>
+    <string name="title_star">✻</string>
+    <string name="message_zero">+</string>
+    <string name="title_zero">0</string>
 </resources>

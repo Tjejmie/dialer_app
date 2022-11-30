@@ -16,7 +16,7 @@ import androidx.appcompat.widget.AppCompatTextView;
 
 public class Dialpad extends ConstraintLayout {
 
-    String title = "asd";
+
 
     public Dialpad(@NonNull Context context) {
         super(context);

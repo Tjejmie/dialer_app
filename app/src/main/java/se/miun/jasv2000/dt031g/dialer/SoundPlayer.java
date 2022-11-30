@@ -23,9 +23,6 @@ public class SoundPlayer extends AppCompatActivity {
     private static int soundPound;
     private static int soundStar;
 
-
-
-
     private SoundPlayer(Context context) {
 
         soundPool = new SoundPool.Builder()
@@ -53,7 +50,6 @@ public class SoundPlayer extends AppCompatActivity {
         }
         return soundPlayerInstance;
     }
-
 
 
     public static void playSound(DialpadButton dialpadButton){
@@ -106,7 +102,9 @@ public class SoundPlayer extends AppCompatActivity {
     }
     public static void destroy() {
 
-
+        soundPool.release();
+        soundPool = null;
+        soundPlayerInstance = null;
     }
 
 }

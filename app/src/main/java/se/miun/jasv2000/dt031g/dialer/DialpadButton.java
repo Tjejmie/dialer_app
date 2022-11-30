@@ -6,17 +6,19 @@ import android.content.res.TypedArray;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.RotateAnimation;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.appcompat.widget.AppCompatTextView;
-
+import androidx.lifecycle.DefaultLifecycleObserver;
 
 
 public class DialpadButton extends ConstraintLayout {
 
-    String title = "asd";
+    String title;
 
     public DialpadButton(@NonNull Context context) {
         super(context);
@@ -25,8 +27,12 @@ public class DialpadButton extends ConstraintLayout {
     }
 
     private void init(Context context) {
+
         inflate(context, R.layout.view_dialpad_button, this);
+        setOnClickListener(view -> animateClick());
     }
+
+
 
 
     public DialpadButton(@NonNull Context context, @Nullable AttributeSet attrs) {
@@ -45,12 +51,13 @@ public class DialpadButton extends ConstraintLayout {
             setMessage(message.toString());
 
 
-
         setOnClickListener(view -> animateClick());
     }
 
-    public void setTitle(String s) {
 
+
+
+    public void setTitle(String s) {
 
         // Return only one char
         s = s.substring(0, 1);
@@ -62,7 +69,6 @@ public class DialpadButton extends ConstraintLayout {
     }
 
     public void setMessage(String s) {
-
         if(s.length() > 4){
             s = s.substring(0,4);
         }
@@ -71,14 +77,15 @@ public class DialpadButton extends ConstraintLayout {
     }
 
     private void animateClick(){
-        //SoundPlayer soundplayer = se.miun.jasv2000.dt031g.dialer.SoundPlayer.getInstance(getContext());
+
         SoundPlayer.playSound(this);
 
-
-        animate().rotationBy(360).start();
+        animate().rotationBy(360);
     }
 
     public String getTitle(){
         return title;
     }
+
+
 }
