@@ -17,7 +17,7 @@ import se.miun.jasv2000.dt031g.dialer.databinding.ActivityMainBinding;
 
 
 public class MainActivity extends AppCompatActivity {
-    boolean notClicked;
+    boolean aboutClicked;
 
 
 
@@ -36,9 +36,9 @@ public class MainActivity extends AppCompatActivity {
 
 
         binding.buttonAbout.setOnClickListener(v -> {
-            if(!notClicked)
+            if(!aboutClicked)
             {
-                notClicked = true;
+                aboutClicked = true;
                 String aboutInfo = getResources().getString(R.string.about_info);
                 String aboutHeader = getResources().getString(R.string.about_header);
                 String ok = getResources().getString(R.string.ok);
@@ -68,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onSaveInstanceState(@NonNull Bundle outState) {
 
-        outState.putBoolean("key_value", notClicked);
+        outState.putBoolean("key_value", aboutClicked);
         super.onSaveInstanceState(outState);
 
     }
@@ -76,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
-        notClicked = savedInstanceState.getBoolean("key_value", false);
+        aboutClicked = savedInstanceState.getBoolean("key_value", false);
 
     }
 
