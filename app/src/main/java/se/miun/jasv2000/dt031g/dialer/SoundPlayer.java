@@ -4,8 +4,11 @@ package se.miun.jasv2000.dt031g.dialer;
 
 import android.content.Context;
 import android.media.SoundPool;
+import android.os.Environment;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import java.io.File;
 
 public class SoundPlayer extends AppCompatActivity {
     private static SoundPlayer soundPlayerInstance;
@@ -23,23 +26,27 @@ public class SoundPlayer extends AppCompatActivity {
     private static int soundPound;
     private static int soundStar;
 
+
+    String default_voice = Environment.getDataDirectory() + "/data/se.miun.jasv2000.dt031g.dialer/files/voices/mamacita_us/";
+
+
     private SoundPlayer(Context context) {
 
         soundPool = new SoundPool.Builder()
                 .setMaxStreams(3)
                 .build();
-        soundZero = soundPool.load(context, R.raw.zero, 1);
-        soundOne = soundPool.load(context, R.raw.one, 1);
-        soundTwo = soundPool.load(context, R.raw.two, 1);
-        soundThree = soundPool.load(context, R.raw.three, 1);
-        soundFour = soundPool.load(context, R.raw.four, 1);
-        soundFive = soundPool.load(context, R.raw.five, 1);
-        soundSix = soundPool.load(context, R.raw.six, 1);
-        soundSeven = soundPool.load(context, R.raw.seven, 1);
-        soundEight = soundPool.load(context, R.raw.eight, 1);
-        soundNine = soundPool.load(context, R.raw.nine, 1);
-        soundPound = soundPool.load(context, R.raw.pound, 1);
-        soundStar = soundPool.load(context, R.raw.star, 1);
+        soundZero = soundPool.load(default_voice + "zero.mp3", 1);
+        soundOne = soundPool.load(default_voice + "one.mp3", 1);
+        soundTwo = soundPool.load(default_voice + "two.mp3", 1);
+        soundThree = soundPool.load(default_voice + "three.mp3", 1);
+        soundFour = soundPool.load(default_voice + "four.mp3", 1);
+        soundFive = soundPool.load(default_voice + "five.mp3", 1);
+        soundSix = soundPool.load(default_voice + "six.mp3", 1);
+        soundSeven = soundPool.load(default_voice + "seven.mp3", 1);
+        soundEight = soundPool.load(default_voice + "eight.mp3", 1);
+        soundNine = soundPool.load(default_voice + "nine.mp3", 1);
+        soundPound = soundPool.load(default_voice + "pound.mp3", 1);
+        soundStar = soundPool.load(default_voice + "star.mp3", 1);
 
     }
 
