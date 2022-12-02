@@ -28,6 +28,20 @@ public class MainActivity extends AppCompatActivity {
         View view = binding.getRoot();
         setContentView(view);
 
+
+
+        // Check if default voice dir already exist in internal app storage,
+        // if false, copy all voices to app storage.
+        if(!Util.defaultVoiceExist(this)){
+            Util.copyDefaultVoiceToInternalStorage(this);
+        }
+
+
+
+
+
+
+
         // Onclick listeners for buttons on start-page
         binding.buttonDial.setOnClickListener(v -> startActivity(new Intent(this, DialActivity.class)));
         binding.buttonCallList.setOnClickListener(v -> startActivity(new Intent(this, CallListActivity.class)));
