@@ -10,10 +10,63 @@
 
     <se.miun.jasv2000.dt031g.dialer.Dialpad
         android:id="@+id/dialpad2"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="match_parent"
+        android:layout_height="228dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.85"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/editText" />
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="@color/cyan_primary2"
+        android:cursorVisible="false"
+        android:gravity="center"
+        android:paddingTop="10dp"
+        android:textColor="@color/white"
+        android:focusableInTouchMode="true"
+        android:focusable="false"
+        android:textSize="40sp"
+        tools:ignore="Deprecated,MissingConstraints"
+        tools:layout_editor_absoluteX="-2dp"
+        tools:layout_editor_absoluteY="-4dp"
+        android:freezesText="true"/>
+
+    <ImageButton
+        android:id="@+id/btncall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:background="@color/cyan_primary2"
+        android:onClick="buttonClickEvent"
+        android:src="@drawable/icon_call"
+
+        app:layout_constraintBottom_toBottomOf="@+id/editText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.893"
+        app:layout_constraintStart_toStartOf="@+id/editText"
+        app:layout_constraintTop_toTopOf="@+id/editText"
+        app:layout_constraintVertical_bias="0.625" />
+
+    <ImageButton
+        android:id="@+id/btndel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:background="@color/cyan_primary2"
+        android:onClick="buttonClickEvent"
+        android:src="@drawable/icon_delete"
+
+        app:layout_constraintBottom_toBottomOf="@+id/editText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.951"
+        app:layout_constraintStart_toStartOf="@+id/editText"
+        app:layout_constraintTop_toTopOf="@+id/editText"
+        app:layout_constraintVertical_bias="0.644" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
+

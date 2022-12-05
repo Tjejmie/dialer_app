@@ -41,6 +41,7 @@
     <string name="about_header">About</string>
     <string name="about_snackbar">You have already seen the about-dialog before.</string>
 
+
     <!-- Activity dial -->
     <string name="title_one">1</string>
     <string name="message_two">ABC</string>
