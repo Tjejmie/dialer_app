@@ -29,10 +29,10 @@ public class DialpadButton extends ConstraintLayout {
     private void init(Context context) {
 
         inflate(context, R.layout.view_dialpad_button, this);
+
+        SoundPlayer.getInstance(context);
         setOnClickListener(view -> animateClick());
     }
-
-
 
 
     public DialpadButton(@NonNull Context context, @Nullable AttributeSet attrs) {
@@ -50,7 +50,7 @@ public class DialpadButton extends ConstraintLayout {
         if (message != null)
             setMessage(message.toString());
 
-
+        SoundPlayer.getInstance(context);
         setOnClickListener(view -> animateClick());
     }
 
@@ -77,8 +77,8 @@ public class DialpadButton extends ConstraintLayout {
     }
 
     private void animateClick(){
-
-        SoundPlayer.playSound(this);
+        SoundPlayer.soundPlayerInstance.playSound(this);
+        //SoundPlayer.playSound(this);
 
         animate().rotationBy(360);
     }

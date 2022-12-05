@@ -11,7 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import java.io.File;
 
 public class SoundPlayer extends AppCompatActivity {
-    private static SoundPlayer soundPlayerInstance;
+    public static SoundPlayer soundPlayerInstance;
     private static SoundPool soundPool;
     private static int soundZero;
     private static int soundOne;
@@ -31,7 +31,6 @@ public class SoundPlayer extends AppCompatActivity {
 
 
     private SoundPlayer(Context context) {
-
         soundPool = new SoundPool.Builder()
                 .setMaxStreams(3)
                 .build();

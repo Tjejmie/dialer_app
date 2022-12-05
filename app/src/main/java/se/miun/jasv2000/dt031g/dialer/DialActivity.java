@@ -22,6 +22,7 @@ public class DialActivity extends AppCompatActivity implements DefaultLifecycleO
     @Override
     public void onDestroy(@NonNull LifecycleOwner owner) {
         DefaultLifecycleObserver.super.onDestroy(owner);
-        SoundPlayer.destroy();
+        SoundPlayer.soundPlayerInstance.destroy();
+        //SoundPlayer.destroy();
     }
 }
