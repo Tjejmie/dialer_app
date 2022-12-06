@@ -3,11 +3,13 @@
         <SwitchPreferenceCompat
             app:title="@string/setting_storeNumberTitle"
             app:summary="@string/setting_storeNumberSummary"
-            app:icon="@drawable/ic_save"/>
+            app:icon="@drawable/ic_save"
+            app:key="@string/key_save_phoneNumbers"
+            />
 
         <Preference
             app:icon="@drawable/ic_delete"
-
+            app:key="@string/key_delete_phoneNumbers"
             app:summary="@string/setting_deleteNumberSummary"
             app:title="@string/setting_deleteNumberTitle" />
 

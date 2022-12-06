@@ -1,26 +1,41 @@
 package se.miun.jasv2000.dt031g.dialer;
 
+import static android.content.ContentValues.TAG;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.DefaultLifecycleObserver;
 import androidx.lifecycle.LifecycleOwner;
 
 import android.annotation.SuppressLint;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.Scanner;
+
 import se.miun.jasv2000.dt031g.dialer.databinding.ActivityMainBinding;
 
 public class DialActivity extends AppCompatActivity implements DefaultLifecycleObserver {
     private ActivityMainBinding binding;
-
-
+    // Declare path to the directory on the filesystem where app-specific files are stored
+    File localDir;
+    // adding file-name to the end of path
+    File filePath;
+    public static final String
+            KEY_PREF_EXAMPLE_SWITCH = "key_save_phoneNumbers";
     static EditText editText;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +43,11 @@ public class DialActivity extends AppCompatActivity implements DefaultLifecycleO
         setContentView(R.layout.activity_dial);
         editText = findViewById(R.id.editText);
         SoundPlayer.getInstance(getApplicationContext());
+        // Declare path to the directory on the filesystem where app-specific files are stored
+        localDir = getApplicationContext().getFilesDir();
+        // adding file-name to the end of path
+        filePath = new File(localDir + "/" + SettingsActivity.getFilename(this));
+
     }
     public void buttonClickEvent(View v) {
         String phoneNo = editText.getText().toString();
@@ -51,21 +71,51 @@ public class DialActivity extends AppCompatActivity implements DefaultLifecycleO
                         phoneNo = phoneNo.replace("✻","%2A");
                     }
 
+                    if(SettingsActivity.shouldStoreNumbers(this)){
+                        saveNumber();
+                    }
+
+
                     intent.setData(Uri.parse("tel:"+phoneNo));
                     startActivity(intent);
 
                     break;
             }
         } catch (Exception ex) {
-
+            Log.e("Exception", "Error with pressing button: " + ex);
         }
     }
+
+
+    private void saveNumber() {
+            try {
+                if(!phoneNumberFileExist()){
+                    System.out.println("Creating new file");
+                    filePath.createNewFile();
+                }
+                if(!String.valueOf(editText.getText()).equals("")){
+                    FileWriter fileWriter = new FileWriter(filePath, true);
+                    fileWriter.append(String.valueOf(editText.getText())).append("\n");
+                    fileWriter.close();
+                }
+            } catch (IOException e) {
+                // If an IOException occurs, we just ignore it
+                Log.e("Exception", "File write failed: " + e);
+            }
+    }
+
+    public boolean phoneNumberFileExist() {
+        if(filePath.exists()){
+            return true;
+        }
+        return false;
+    }
+
 
     public static void addTitleToPhoneNumber(String title){
         String phoneNo = editText.getText().toString();
         phoneNo += title;
         editText.setText(phoneNo);
-
     }
 
     @Override

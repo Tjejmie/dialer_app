@@ -69,4 +69,13 @@
     <!-- Menu options -->
     <string name="menu_settings">Settings</string>
 
+    <string name="pref_filename_key">filename</string>
+    <string name="pref_filename_default_value">"phonenumbers.txt"</string>
+
+    <string name="key_delete_phoneNumbers">delete_phoneNumbers</string>
+    <string name="phoneNumbersEmpty">No telephone numbers are stored</string>
+    <string name="key_save_phoneNumbers">save_phoneNumbers</string>
+
+
+
 </resources>
