@@ -29,14 +29,11 @@ import java.util.Scanner;
 import se.miun.jasv2000.dt031g.dialer.databinding.ActivityMainBinding;
 
 public class DialActivity extends AppCompatActivity implements DefaultLifecycleObserver {
-    private ActivityMainBinding binding;
-    // Declare path to the directory on the filesystem where app-specific files are stored
+
     File localDir;
-    // adding file-name to the end of path
     File filePath;
-    public static final String
-            KEY_PREF_EXAMPLE_SWITCH = "key_save_phoneNumbers";
     static EditText editText;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -58,12 +55,10 @@ public class DialActivity extends AppCompatActivity implements DefaultLifecycleO
                     if (phoneNo.length() > 0) {
                         phoneNo = phoneNo.substring(0, phoneNo.length() - 1);
                     }
-
                     editText.setText(phoneNo);
                     break;
                 case R.id.btncall:
                     Intent intent = new Intent(Intent.ACTION_DIAL);
-
                     if (phoneNo.contains("#")){
                         phoneNo = phoneNo.replace("#","%23");
                     }
@@ -75,17 +70,14 @@ public class DialActivity extends AppCompatActivity implements DefaultLifecycleO
                         saveNumber();
                     }
 
-
                     intent.setData(Uri.parse("tel:"+phoneNo));
                     startActivity(intent);
-
                     break;
             }
         } catch (Exception ex) {
             Log.e("Exception", "Error with pressing button: " + ex);
         }
     }
-
 
     private void saveNumber() {
             try {

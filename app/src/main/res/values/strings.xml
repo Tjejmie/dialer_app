@@ -75,7 +75,7 @@
     <string name="key_delete_phoneNumbers">delete_phoneNumbers</string>
     <string name="phoneNumbersEmpty">No telephone numbers are stored</string>
     <string name="key_save_phoneNumbers">save_phoneNumbers</string>
-
+    <string name="delete">delete</string>
 
 
 </resources>

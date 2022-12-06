@@ -13,6 +13,7 @@ import androidx.preference.PreferenceFragmentCompat;
 import androidx.preference.PreferenceManager;
 
 import java.io.File;
+import java.util.Objects;
 
 public class SettingsActivity extends AppCompatActivity {
 
@@ -20,6 +21,7 @@ public class SettingsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.settings_activity);
+        Objects.requireNonNull(getSupportActionBar()).setTitle("Settings");
         if (savedInstanceState == null) {
             getSupportFragmentManager()
                     .beginTransaction()
@@ -61,10 +63,6 @@ public class SettingsActivity extends AppCompatActivity {
     }
 
 
-
-
-
-
     public static boolean deletePhoneNumbers(Context context) {
         File localDir = context.getFilesDir();
         File filePath = new File(localDir + "/" + SettingsActivity.getFilename(context));
@@ -72,4 +70,6 @@ public class SettingsActivity extends AppCompatActivity {
         File phoneNumersFile = new File(String.valueOf(filePath));
         return phoneNumersFile.delete();
     }
+
+
 }
