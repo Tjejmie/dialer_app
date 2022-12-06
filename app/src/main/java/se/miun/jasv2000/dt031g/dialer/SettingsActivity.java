@@ -1,9 +1,11 @@
 package se.miun.jasv2000.dt031g.dialer;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceActivity;
+import android.view.MenuItem;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
@@ -70,6 +72,16 @@ public class SettingsActivity extends AppCompatActivity {
         File phoneNumersFile = new File(String.valueOf(filePath));
         return phoneNumersFile.delete();
     }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == android.R.id.home) {
+            finish();
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+
+    }
+
 
 
 }
