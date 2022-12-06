@@ -36,7 +36,6 @@ public class DialpadButton extends ConstraintLayout {
 
     public DialpadButton(@NonNull Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
-
         init(context, attrs);
 
     }
@@ -56,6 +55,7 @@ public class DialpadButton extends ConstraintLayout {
         setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 DialActivity.addTitleToPhoneNumber(title);
                 animateClick();
             }

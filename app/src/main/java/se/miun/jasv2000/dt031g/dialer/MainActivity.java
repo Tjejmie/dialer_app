@@ -28,7 +28,6 @@ public class MainActivity extends AppCompatActivity {
         View view = binding.getRoot();
         setContentView(view);
 
-
         // Check if default voice dir already exist in internal app storage,
         // if false, copy all voices to app storage.
         if(!Util.defaultVoiceExist(this)){

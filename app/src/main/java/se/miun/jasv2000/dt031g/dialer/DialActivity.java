@@ -5,23 +5,21 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.DefaultLifecycleObserver;
 import androidx.lifecycle.LifecycleOwner;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.util.Base64;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.TextView;
-
-import org.w3c.dom.Text;
-
-import java.net.URLDecoder;
-import java.nio.charset.StandardCharsets;
 
 import se.miun.jasv2000.dt031g.dialer.databinding.ActivityMainBinding;
 
 public class DialActivity extends AppCompatActivity implements DefaultLifecycleObserver {
     private ActivityMainBinding binding;
+
 
     static EditText editText;
     @Override
@@ -29,7 +27,7 @@ public class DialActivity extends AppCompatActivity implements DefaultLifecycleO
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dial);
         editText = findViewById(R.id.editText);
-
+        SoundPlayer.getInstance(getApplicationContext());
     }
     public void buttonClickEvent(View v) {
         String phoneNo = editText.getText().toString();
@@ -37,7 +35,7 @@ public class DialActivity extends AppCompatActivity implements DefaultLifecycleO
 
             switch (v.getId()) {
                 case R.id.btndel:
-                    if (phoneNo != null && phoneNo.length() > 0) {
+                    if (phoneNo.length() > 0) {
                         phoneNo = phoneNo.substring(0, phoneNo.length() - 1);
                     }
 
@@ -71,11 +69,34 @@ public class DialActivity extends AppCompatActivity implements DefaultLifecycleO
     }
 
     @Override
-    public void onDestroy(@NonNull LifecycleOwner owner) {
-        DefaultLifecycleObserver.super.onDestroy(owner);
+    public void onDestroy() {
+        super.onDestroy();
+        SoundPlayer.getInstance(getApplicationContext()).destroy();
+    }
 
-        SoundPlayer.soundPlayerInstance.destroy();
 
+    /**
+     * Override this method to inflate your menu to the activity.
+     */
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.dial_menu, menu);
+        return true;
+    }
 
+    /**
+     * Override this method to handle selections of items in the menu.
+     */
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle item selection
+        if (item.getItemId() == R.id.menu_settings) {
+            //Starts activity for settings
+            startActivity(new Intent(this, SettingsActivity.class));
+            return true;
+        }
+        // Invoke superclass if the action was not recognized
+        return super.onOptionsItemSelected(item);
     }
 }

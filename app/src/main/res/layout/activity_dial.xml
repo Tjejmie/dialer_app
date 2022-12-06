@@ -22,23 +22,26 @@
         tools:ignore="Deprecated,MissingConstraints"
         tools:layout_editor_absoluteX="-2dp"
         tools:layout_editor_absoluteY="-4dp"
-        android:freezesText="true"/>
+        android:freezesText="true"
+        android:inputType="phone"/>
+
     <ImageButton
         android:id="@+id/btncall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
+        android:background="@color/cyan_primary2"
+        android:minWidth="48dp"
+        android:minHeight="48dp"
+
         android:onClick="buttonClickEvent"
         android:src="@drawable/icon_call"
-        android:background="@color/cyan_primary2"
-
         app:layout_constraintBottom_toBottomOf="@+id/editText"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.95"
+        app:layout_constraintHorizontal_bias="0.955"
         app:layout_constraintStart_toStartOf="@+id/editText"
         app:layout_constraintTop_toTopOf="@+id/editText"
-        app:layout_constraintVertical_bias="0.243"
-        />
+        app:layout_constraintVertical_bias="0.216" />
 
     <ImageButton
         android:id="@+id/btndel"
@@ -46,15 +49,18 @@
         android:layout_height="wrap_content"
 
         android:background="@color/cyan_primary2"
+        android:contentDescription="@string/about_header"
+        android:minWidth="48dp"
+
+        android:minHeight="48dp"
         android:onClick="buttonClickEvent"
         android:src="@drawable/icon_delete"
-
         app:layout_constraintBottom_toBottomOf="@+id/editText"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.951"
+        app:layout_constraintHorizontal_bias="0.955"
         app:layout_constraintStart_toStartOf="@+id/editText"
         app:layout_constraintTop_toTopOf="@+id/editText"
-        app:layout_constraintVertical_bias="0.644" />
+        app:layout_constraintVertical_bias="0.807" />
 
     <se.miun.jasv2000.dt031g.dialer.Dialpad
         android:id="@+id/dialpad"
