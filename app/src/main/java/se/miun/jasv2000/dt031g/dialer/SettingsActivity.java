@@ -43,7 +43,7 @@ public class SettingsActivity extends AppCompatActivity {
             // Handle click on delete preference
             findPreference(getString(R.string.key_delete_phoneNumbers))
                     .setOnPreferenceClickListener(preference -> {
-                        // Call method in SettingsActivity to reset number of clicks
+                        // Call method to delete stored numbers
                         return deletePhoneNumbers(getContext());
                     });
 

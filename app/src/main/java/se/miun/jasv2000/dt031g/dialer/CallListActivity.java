@@ -27,9 +27,7 @@ import java.util.Scanner;
 
 public class CallListActivity extends AppCompatActivity {
     File localDir;
-    // adding file-name to the end of path
     File filePath;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

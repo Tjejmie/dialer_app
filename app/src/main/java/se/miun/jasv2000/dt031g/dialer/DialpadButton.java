@@ -51,7 +51,6 @@ public class DialpadButton extends ConstraintLayout {
         if (message != null)
             setMessage(message.toString());
 
-
         setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
