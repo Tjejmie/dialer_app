@@ -4,47 +4,75 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-
-
     tools:context=".DialActivity">
 
-    <se.miun.jasv2000.dt031g.dialer.DialpadButton
-        android:id="@+id/dialpad_button_1"
-        android:layout_width="78dp"
-        android:layout_height="130dp"
-        android:layout_marginTop="40dp"
-        app:layout_constraintBottom_toTopOf="@+id/myButton"
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="match_parent"
+        android:layout_height="131dp"
+        android:background="@color/cyan_primary2"
+        android:cursorVisible="false"
+        android:gravity="center"
+        android:paddingTop="10dp"
+        android:textColor="@color/white"
+        android:focusableInTouchMode="true"
+        android:focusable="false"
+        android:textSize="40sp"
+        tools:ignore="Deprecated,MissingConstraints"
+        tools:layout_editor_absoluteX="-2dp"
+        tools:layout_editor_absoluteY="-4dp"
+        android:freezesText="true"
+        android:inputType="phone"/>
+
+    <ImageButton
+        android:id="@+id/btncall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:background="@color/cyan_primary2"
+        android:minWidth="48dp"
+        android:minHeight="48dp"
+
+        android:onClick="buttonClickEvent"
+        android:src="@drawable/icon_call"
+        app:layout_constraintBottom_toBottomOf="@+id/editText"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:message="ABf"
-        app:title="1" />
+        app:layout_constraintHorizontal_bias="0.955"
+        app:layout_constraintStart_toStartOf="@+id/editText"
+        app:layout_constraintTop_toTopOf="@+id/editText"
+        app:layout_constraintVertical_bias="0.216" />
 
-    <se.miun.jasv2000.dt031g.dialer.DialpadButton
-        android:id="@+id/myButton"
-        android:layout_width="217dp"
-        android:layout_height="215dp"
+    <ImageButton
+        android:id="@+id/btndel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
 
+        android:background="@color/cyan_primary2"
+        android:contentDescription="@string/about_header"
+        android:minWidth="48dp"
 
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:minHeight="48dp"
+        android:onClick="buttonClickEvent"
+        android:src="@drawable/icon_delete"
+        app:layout_constraintBottom_toBottomOf="@+id/editText"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.473"
-        app:message="ghi"
-        app:title="3" />
+        app:layout_constraintHorizontal_bias="0.955"
+        app:layout_constraintStart_toStartOf="@+id/editText"
+        app:layout_constraintTop_toTopOf="@+id/editText"
+        app:layout_constraintVertical_bias="0.807" />
 
-    <se.miun.jasv2000.dt031g.dialer.DialpadButton
-        android:id="@+id/dialpad_button_2"
-        android:layout_width="60dp"
-        android:layout_height="75dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <se.miun.jasv2000.dt031g.dialer.Dialpad
+        android:id="@+id/dialpad"
+        android:layout_width="407dp"
+        android:layout_height="758dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="132dp"
+        android:layout_marginEnd="1dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/myButton"
-        app:message="DEF"
-        app:title="2" />
+        app:layout_constraintTop_toTopOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

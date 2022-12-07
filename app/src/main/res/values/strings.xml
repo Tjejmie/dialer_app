@@ -16,19 +16,14 @@
 
 
     <!-- Preference Titles -->
-    <string name="messages_header">Messages</string>
-    <string name="sync_header">Sync</string>
+
+
     <string name="ok">OK</string>
-    <!-- Messages Preferences -->
-    <string name="signature_title">Your signature</string>
-    <string name="reply_title">Default reply action</string>
+
 
     <!-- Sync Preferences -->
-    <string name="sync_title">Sync email periodically</string>
-    <string name="attachment_title">Download incoming attachments</string>
-    <string name="attachment_summary_on">Automatically download attachments for incoming emails
-    </string>
-    <string name="attachment_summary_off">Only download attachments when manually requested</string>
+
+
     <string name="title_activity_maps">MapsActivity</string>
 
     <!-- About Dialog -->
@@ -39,7 +34,48 @@
                     • Change the keypad settings \n
                     • Show on a Map where previously calls are dialed from</string>
     <string name="about_header">About</string>
+    <string name="about_snackbar">You have already seen the about-dialog before.</string>
 
+
+    <!-- Settings -->
+    <string name="setting_storeNumberTitle">Store numbers</string>
+    <string name="setting_storeNumberSummary">Dialed telephone numbers are stored so they can be viewed later</string>
+    <string name="setting_deleteNumberTitle">Delete stored numbers</string>
+    <string name="setting_deleteNumberSummary">Delete stored telephone numbers from storage</string>
+    <!-- Activity dial -->
+    <string name="title_one">1</string>
+    <string name="message_two">ABC</string>
+    <string name="title_two">2</string>
+    <string name="title_three">3</string>
+    <string name="message_three">DEF</string>
+    <string name="title_four">4</string>
+    <string name="message_four">GHI</string>
+    <string name="title_five">5</string>
+    <string name="message_five">JKL</string>
+    <string name="title_six">6</string>
+    <string name="message_six">MNO</string>
+    <string name="title_seven">7</string>
+    <string name="message_seven">PQRS</string>
+    <string name="title_eight">8</string>
+    <string name="message_eight">TUV</string>
+    <string name="title_nine">9</string>
+    <string name="message_nine">WXYZ</string>
+    <string name="title_pound">#</string>
+    <string name="title_star">✻</string>
+    <string name="message_zero">+</string>
+    <string name="title_zero">0</string>
+
+
+    <!-- Menu options -->
+    <string name="menu_settings">Settings</string>
+
+    <string name="pref_filename_key">filename</string>
+    <string name="pref_filename_default_value">"phonenumbers.txt"</string>
+
+    <string name="key_delete_phoneNumbers">delete_phoneNumbers</string>
+    <string name="phoneNumbersEmpty">No telephone numbers are stored</string>
+    <string name="key_save_phoneNumbers">save_phoneNumbers</string>
+    <string name="delete">delete</string>
 
 
 </resources>
