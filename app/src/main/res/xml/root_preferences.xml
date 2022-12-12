@@ -5,6 +5,7 @@
             app:summary="@string/setting_storeNumberSummary"
             app:icon="@drawable/ic_save"
             app:key="@string/key_save_phoneNumbers"
+            app:defaultValue="true"
             />
 
         <Preference
