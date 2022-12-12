@@ -4,13 +4,17 @@ import static android.content.ContentValues.TAG;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import androidx.lifecycle.DefaultLifecycleObserver;
 import androidx.lifecycle.LifecycleOwner;
 
+import android.Manifest;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
@@ -19,6 +23,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import java.io.File;
 import java.io.FileWriter;
@@ -30,10 +35,13 @@ import se.miun.jasv2000.dt031g.dialer.databinding.ActivityMainBinding;
 
 public class DialActivity extends AppCompatActivity implements DefaultLifecycleObserver {
 
+
     File localDir;
     File filePath;
     static EditText editText;
-
+    String phoneNo;
+    Intent callIntent = new Intent(Intent.ACTION_CALL);
+    Intent dialIntent = new Intent(Intent.ACTION_DIAL);
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,7 +55,7 @@ public class DialActivity extends AppCompatActivity implements DefaultLifecycleO
 
     }
     public void buttonClickEvent(View v) {
-        String phoneNo = editText.getText().toString();
+        phoneNo = editText.getText().toString();
         try {
 
             switch (v.getId()) {
@@ -58,7 +66,7 @@ public class DialActivity extends AppCompatActivity implements DefaultLifecycleO
                     editText.setText(phoneNo);
                     break;
                 case R.id.btncall:
-                    Intent intent = new Intent(Intent.ACTION_DIAL);
+
                     if (phoneNo.contains("#")){
                         phoneNo = phoneNo.replace("#","%23");
                     }
@@ -70,14 +78,42 @@ public class DialActivity extends AppCompatActivity implements DefaultLifecycleO
                         saveNumber();
                     }
 
-                    intent.setData(Uri.parse("tel:"+phoneNo));
-                    startActivity(intent);
+                    // If permission for call_phone is not granted
+                    if (ActivityCompat.checkSelfPermission(DialActivity.this,
+                            Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
+                        ActivityCompat.requestPermissions(DialActivity.this, new String[]{Manifest.permission.CALL_PHONE}, 1);
+                    }
+                    // If permission for call_phone already is accepted
+                    else{
+                        callIntent.setData(Uri.parse("tel:"+phoneNo));
+                        startActivity(callIntent);
+                    }
                     break;
             }
         } catch (Exception ex) {
             Log.e("Exception", "Error with pressing button: " + ex);
         }
     }
+
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, String[] permissions,
+                                           int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+
+        if (requestCode == 1) {// If permission is accepted
+            if (grantResults.length > 0
+                    && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                callIntent.setData(Uri.parse("tel:" + phoneNo));
+                startActivity(callIntent);
+                // If permission is denied
+            } else {
+                dialIntent.setData(Uri.parse("tel:" + phoneNo));
+                startActivity(dialIntent);
+            }
+        }
+    }
+
 
     private void saveNumber() {
             try {

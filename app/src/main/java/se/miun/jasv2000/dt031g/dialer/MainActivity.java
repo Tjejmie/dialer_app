@@ -19,8 +19,6 @@ import se.miun.jasv2000.dt031g.dialer.databinding.ActivityMainBinding;
 public class MainActivity extends AppCompatActivity {
     boolean aboutClicked;
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
