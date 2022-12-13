@@ -7,6 +7,20 @@
     tools:context=".MainActivity">
 
     <Button
+        android:id="@+id/button_download_voices"
+        android:layout_width="220dp"
+        android:layout_height="57dp"
+        android:text="@string/dialer_download_voices"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/button_about"
+        app:layout_constraintHorizontal_bias="0.93"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_settings"
+        app:layout_constraintVertical_bias="0.0"
+        app:strokeColor="@color/black"
+        app:strokeWidth="1dp" />
+
+    <Button
         android:id="@+id/button_map"
         android:layout_width="220dp"
         android:layout_height="57dp"
@@ -45,7 +59,7 @@
         app:layout_constraintTop_toBottomOf="@+id/button_dial"
         app:layout_constraintVertical_bias="0.0"
         app:strokeColor="@color/black"
-        app:strokeWidth="1dp"/>
+        app:strokeWidth="1dp" />
 
     <Button
         android:id="@+id/button_call_list"
@@ -68,12 +82,12 @@
         android:text="@string/dialer_about"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.499"
+        app:layout_constraintHorizontal_bias="0.694"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button_settings"
+        app:layout_constraintTop_toBottomOf="@+id/button_map"
         app:layout_constraintVertical_bias="0.0"
         app:strokeColor="@color/black"
-        app:strokeWidth="1dp"/>
+        app:strokeWidth="1dp" />
 
     <TextView
         android:id="@+id/textView_header"

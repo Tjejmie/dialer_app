@@ -174,6 +174,11 @@ public class DialActivity extends AppCompatActivity implements DefaultLifecycleO
             startActivity(new Intent(this, SettingsActivity.class));
             return true;
         }
+        if (item.getItemId() == R.id.menu_download_voices) {
+            //Starts activity for settings
+            startActivity(new Intent(this, DownloadActivity.class));
+            return true;
+        }
         // Invoke superclass if the action was not recognized
         return super.onOptionsItemSelected(item);
     }

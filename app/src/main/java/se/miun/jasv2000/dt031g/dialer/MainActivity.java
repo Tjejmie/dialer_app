@@ -35,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
 
         // Onclick listeners for buttons on start-page
         binding.buttonDial.setOnClickListener(v -> startActivity(new Intent(this, DialActivity.class)));
+        binding.buttonDownloadVoices.setOnClickListener(v -> startActivity(new Intent(this, DownloadActivity.class)));
         binding.buttonCallList.setOnClickListener(v -> startActivity(new Intent(this, CallListActivity.class)));
         binding.buttonSettings.setOnClickListener(v -> startActivity(new Intent(this, SettingsActivity.class)));
         binding.buttonMap.setOnClickListener(v -> startActivity(new Intent(this, MapsActivity.class)));
