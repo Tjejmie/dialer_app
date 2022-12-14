@@ -4,6 +4,7 @@ package se.miun.jasv2000.dt031g.dialer;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -19,6 +20,7 @@ import se.miun.jasv2000.dt031g.dialer.databinding.ActivityMainBinding;
 public class MainActivity extends AppCompatActivity {
     boolean aboutClicked;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,10 +34,15 @@ public class MainActivity extends AppCompatActivity {
             Util.copyDefaultVoiceToInternalStorage(this);
         }
 
-
         // Onclick listeners for buttons on start-page
         binding.buttonDial.setOnClickListener(v -> startActivity(new Intent(this, DialActivity.class)));
-        binding.buttonDownloadVoices.setOnClickListener(v -> startActivity(new Intent(this, DownloadActivity.class)));
+
+        // DownloadActivity, putExtra to send url and filepath
+        Intent i = new Intent(this, DownloadActivity.class);
+        binding.buttonDownloadVoices.setOnClickListener(v -> startActivity(i));
+        i.putExtra(getResources().getString(R.string.URL_KEY), getResources().getString(R.string.download_voices_address));
+        i.putExtra(getResources().getString(R.string.FILEPATH_KEY), getResources().getString(R.string.path));
+
         binding.buttonCallList.setOnClickListener(v -> startActivity(new Intent(this, CallListActivity.class)));
         binding.buttonSettings.setOnClickListener(v -> startActivity(new Intent(this, SettingsActivity.class)));
         binding.buttonMap.setOnClickListener(v -> startActivity(new Intent(this, MapsActivity.class)));

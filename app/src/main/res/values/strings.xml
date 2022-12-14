@@ -79,4 +79,15 @@
     <string name="dialer_download_voices">Download voices</string>
 
 
+    <string name="download_voices_address">https://dt031g.programvaruteknik.nu/dialer/voices/</string>
+    <string name="URL_KEY">URL_KEY</string>
+
+    <string name="FILEPATH_KEY">FILEPATH_KEY</string>
+    <string name="path">/data/data/se.miun.jasv2000.dt031g.dialer/files/voices/</string>
+    <string name="downloadFileName">downloadedfile.dps</string>
+    <string name="downloading_title">Downloading</string>
+    <string name="cancel_message">Cancel</string>
+    <string name="download_error">Download error:</string>
+    <string name="file_downloaded">File downloaded</string>
+
 </resources>
