@@ -1,24 +1,43 @@
 package se.miun.jasv2000.dt031g.dialer;
 
 
+import static android.content.ContentValues.TAG;
+import static java.security.AccessController.getContext;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.preference.ListPreference;
+import androidx.preference.Preference;
+import androidx.preference.PreferenceManager;
+
+import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 
 import com.google.android.material.snackbar.Snackbar;
 
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Scanner;
 import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.regex.PatternSyntaxException;
 
 import se.miun.jasv2000.dt031g.dialer.databinding.ActivityMainBinding;
 
 
 public class MainActivity extends AppCompatActivity {
+    public static String voiceName;
     boolean aboutClicked;
+
 
 
     @Override
@@ -33,6 +52,15 @@ public class MainActivity extends AppCompatActivity {
         if(!Util.defaultVoiceExist(this)){
             Util.copyDefaultVoiceToInternalStorage(this);
         }
+
+
+
+
+
+
+
+
+
 
         // Onclick listeners for buttons on start-page
         binding.buttonDial.setOnClickListener(v -> startActivity(new Intent(this, DialActivity.class)));
@@ -76,6 +104,13 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    @Override
+    public void onResume() {
+        super.onResume();
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+        voiceName = preferences.getString("Name", "mamacita_us");
+    }
+
 
 
     @Override
@@ -92,6 +127,9 @@ public class MainActivity extends AppCompatActivity {
         aboutClicked = savedInstanceState.getBoolean("key_value", false);
 
     }
+
+
+
 
 }
 

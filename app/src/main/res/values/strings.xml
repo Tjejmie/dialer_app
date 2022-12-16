@@ -90,4 +90,8 @@
     <string name="download_error">Download error:</string>
     <string name="file_downloaded">File downloaded</string>
 
+
+
+
+    <string name="pref_filename_summary">The number of clicks are stored in the file %1$s</string>
 </resources>
