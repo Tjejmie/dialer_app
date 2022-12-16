@@ -5,6 +5,7 @@
             app:summary="@string/setting_storeNumberSummary"
             app:icon="@drawable/ic_save"
             app:key="@string/key_save_phoneNumbers"
+            app:defaultValue="true"
             />
 
         <Preference
@@ -12,5 +13,11 @@
             app:key="@string/key_delete_phoneNumbers"
             app:summary="@string/setting_deleteNumberSummary"
             app:title="@string/setting_deleteNumberTitle" />
+
+        <ListPreference
+            app:key="@string/voice_preference"
+            app:title="@string/voice_title"
+            app:icon="@drawable/icon_voice"
+          />
 
 </PreferenceScreen>

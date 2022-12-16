@@ -76,6 +76,26 @@
     <string name="phoneNumbersEmpty">No telephone numbers are stored</string>
     <string name="key_save_phoneNumbers">save_phoneNumbers</string>
     <string name="delete">delete</string>
+    <string name="dialer_download_voices">Download voices</string>
 
+
+    <string name="download_voices_address">https://dt031g.programvaruteknik.nu/dialer/voices/</string>
+    <string name="URL_KEY">URL_KEY</string>
+
+    <string name="FILEPATH_KEY">FILEPATH_KEY</string>
+    <string name="path">/data/data/se.miun.jasv2000.dt031g.dialer/files/voices/</string>
+    <string name="downloadFileName">downloadedfile.dps</string>
+    <string name="downloading_title">Downloading</string>
+    <string name="cancel_message">Cancel</string>
+    <string name="download_error">Download error:</string>
+    <string name="file_downloaded">File downloaded</string>
+    <string name="voice_preference">voice_preference</string>
+    <string name="voice_title">Voice</string>
+    <string name="key_name">Name</string>
+    <string name="default_voice">mamacita_us</string>
+
+    <!-- Title -->
+    <string name="settings_title">Settings</string>
+    <string name="call_list_title">Call List</string>
 
 </resources>

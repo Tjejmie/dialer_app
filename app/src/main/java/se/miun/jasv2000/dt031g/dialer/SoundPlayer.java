@@ -25,12 +25,16 @@ public class SoundPlayer extends AppCompatActivity {
     private static int soundNine;
     private static int soundPound;
     private static int soundStar;
+    private String voiceName;
 
-
-    String default_voice = Environment.getDataDirectory() + "/data/se.miun.jasv2000.dt031g.dialer/files/voices/mamacita_us/";
+    String default_voice = Environment.getDataDirectory() + "/data/se.miun.jasv2000.dt031g.dialer/files/voices/";
 
 
     private SoundPlayer(Context context) {
+        voiceName = MainActivity.voiceName;
+        default_voice = default_voice + voiceName + "/";
+
+
         soundPool = new SoundPool.Builder()
                 .setMaxStreams(3)
                 .build();

@@ -34,7 +34,7 @@ public class CallListActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_call_list);
         localDir = getApplicationContext().getFilesDir();
-        Objects.requireNonNull(getSupportActionBar()).setTitle("Call List");
+        Objects.requireNonNull(getSupportActionBar()).setTitle(getResources().getString(R.string.call_list_title));
         filePath = new File(localDir + "/" + SettingsActivity.getFilename(this));
         String phoneNumbers = readFile();
         TextView textView = findViewById(R.id.textView_call_list);

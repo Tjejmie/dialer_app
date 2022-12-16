@@ -5,6 +5,10 @@
         android:id="@+id/menu_settings"
         android:title="@string/menu_settings"
         app:showAsAction="never"/>
+    <item
+        android:id="@+id/menu_download_voices"
+        android:title="@string/dialer_download_voices"
+        app:showAsAction="never"/>
 
 
 </menu>
