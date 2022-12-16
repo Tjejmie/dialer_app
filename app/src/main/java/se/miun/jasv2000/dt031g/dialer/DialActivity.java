@@ -175,8 +175,14 @@ public class DialActivity extends AppCompatActivity implements DefaultLifecycleO
             return true;
         }
         if (item.getItemId() == R.id.menu_download_voices) {
+
+            // DownloadActivity, putExtra to send url and filepath
+            Intent i = new Intent(this, DownloadActivity.class);
+
+            i.putExtra(getResources().getString(R.string.URL_KEY), getResources().getString(R.string.download_voices_address));
+            i.putExtra(getResources().getString(R.string.FILEPATH_KEY), getResources().getString(R.string.path));
             //Starts activity for settings
-            startActivity(new Intent(this, DownloadActivity.class));
+            startActivity(i);
             return true;
         }
         // Invoke superclass if the action was not recognized
