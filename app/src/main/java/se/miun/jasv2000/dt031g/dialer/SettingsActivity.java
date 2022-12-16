@@ -1,34 +1,19 @@
 package se.miun.jasv2000.dt031g.dialer;
 
-import static android.content.ContentValues.TAG;
 
 import android.content.Context;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.preference.PreferenceActivity;
-import android.text.TextUtils;
-import android.util.Log;
 import android.view.MenuItem;
-
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.preference.EditTextPreference;
 import androidx.preference.ListPreference;
-import androidx.preference.Preference;
 import androidx.preference.PreferenceFragmentCompat;
 import androidx.preference.PreferenceManager;
-
 import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
-import java.util.Locale;
 import java.util.Objects;
-import java.util.Scanner;
 import java.util.regex.PatternSyntaxException;
 
 public class SettingsActivity extends AppCompatActivity {
@@ -41,7 +26,7 @@ public class SettingsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.settings_activity);
-        Objects.requireNonNull(getSupportActionBar()).setTitle("Settings");
+        Objects.requireNonNull(getSupportActionBar()).setTitle(getResources().getString(R.string.settings_title));
         if (savedInstanceState == null) {
             getSupportFragmentManager()
                     .beginTransaction()
@@ -53,12 +38,8 @@ public class SettingsActivity extends AppCompatActivity {
             actionBar.setDisplayHomeAsUpEnabled(true);
         }
 
-
         String path = getResources().getString(R.string.path);
         names = getFileNames(path);
-
-
-
 
     }
 
@@ -75,14 +56,11 @@ public class SettingsActivity extends AppCompatActivity {
                         return deletePhoneNumbers(getContext());
                     });
 
-            ListPreference listPreferenceCategory = (ListPreference) findPreference("voice_preference");
+            ListPreference listPreferenceCategory = findPreference(getResources().getString(R.string.voice_preference));
 
-
-
-            CharSequence entries[] = new String[names.size()];
-            CharSequence entryValues[] = new String[names.size()];
+            CharSequence[] entries = new String[names.size()];
+            CharSequence[] entryValues = new String[names.size()];
             getEntrieValues(entries, entryValues);
-
 
             listPreferenceCategory.setEntries(entries);
             listPreferenceCategory.setEntryValues(entryValues);
@@ -92,7 +70,7 @@ public class SettingsActivity extends AppCompatActivity {
 
             SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getContext());
             SharedPreferences.Editor editor = preferences.edit();
-            editor.putString("Name",voiceName);
+            editor.putString(getResources().getString(R.string.key_name),voiceName);
             editor.apply();
 
         }
@@ -109,21 +87,21 @@ public class SettingsActivity extends AppCompatActivity {
 
         @Override
         public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
-            ListPreference listPreferenceCategory = (ListPreference) findPreference("voice_preference");
+            ListPreference listPreferenceCategory = findPreference(getResources().getString(R.string.voice_preference));
 
-            CharSequence entries[] = new String[names.size()];
-            CharSequence entryValues[] = new String[names.size()];
+            CharSequence[] entries = new String[names.size()];
+            CharSequence[] entryValues = new String[names.size()];
             getEntrieValues(entries, entryValues);
 
             listPreferenceCategory.setEntries(entries);
             listPreferenceCategory.setEntryValues(entryValues);
 
             voiceName = (String) listPreferenceCategory.getEntry();
-            if (key.equals("voice_preference"))
+            if (key.equals(getResources().getString(R.string.voice_preference)))
             {
                 SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getContext());
                 SharedPreferences.Editor editor = preferences.edit();
-                editor.putString("Name",voiceName);
+                editor.putString(getResources().getString(R.string.key_name),voiceName);
                 editor.apply();
 
             }
@@ -140,8 +118,6 @@ public class SettingsActivity extends AppCompatActivity {
             super.onPause();
         }
     }
-
-
 
 
 
@@ -177,18 +153,6 @@ public class SettingsActivity extends AppCompatActivity {
 
         return myData;
     }
-
-
-
-
-
-
-
-
-
-
-
-
 
 
     public static String getFilename(Context context) {

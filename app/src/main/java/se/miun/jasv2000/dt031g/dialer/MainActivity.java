@@ -108,7 +108,7 @@ public class MainActivity extends AppCompatActivity {
     public void onResume() {
         super.onResume();
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
-        voiceName = preferences.getString("Name", "mamacita_us");
+        voiceName = preferences.getString(getResources().getString(R.string.key_name), getResources().getString(R.string.default_voice));
     }
 
 

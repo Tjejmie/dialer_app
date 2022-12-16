@@ -89,9 +89,13 @@
     <string name="cancel_message">Cancel</string>
     <string name="download_error">Download error:</string>
     <string name="file_downloaded">File downloaded</string>
+    <string name="voice_preference">voice_preference</string>
+    <string name="voice_title">Voice</string>
+    <string name="key_name">Name</string>
+    <string name="default_voice">mamacita_us</string>
 
+    <!-- Title -->
+    <string name="settings_title">Settings</string>
+    <string name="call_list_title">Call List</string>
 
-
-
-    <string name="pref_filename_summary">The number of clicks are stored in the file %1$s</string>
 </resources>

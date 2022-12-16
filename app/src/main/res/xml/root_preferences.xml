@@ -15,8 +15,8 @@
             app:title="@string/setting_deleteNumberTitle" />
 
         <ListPreference
-            app:key="voice_preference"
-            app:title="Voice"
+            app:key="@string/voice_preference"
+            app:title="@string/voice_title"
             app:icon="@drawable/icon_voice"
           />
 
