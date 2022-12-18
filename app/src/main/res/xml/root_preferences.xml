@@ -18,6 +18,7 @@
             app:key="@string/voice_preference"
             app:title="@string/voice_title"
             app:icon="@drawable/icon_voice"
+            app:defaultValue="0"
           />
 
 </PreferenceScreen>

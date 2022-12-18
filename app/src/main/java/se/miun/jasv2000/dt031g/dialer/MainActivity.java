@@ -55,13 +55,6 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-
-
-
-
-
-
-
         // Onclick listeners for buttons on start-page
         binding.buttonDial.setOnClickListener(v -> startActivity(new Intent(this, DialActivity.class)));
 
@@ -107,8 +100,8 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public void onResume() {
         super.onResume();
-        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
-        voiceName = preferences.getString(getResources().getString(R.string.key_name), getResources().getString(R.string.default_voice));
+        //SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+        //voiceName = preferences.getString(getResources().getString(R.string.key_name), getResources().getString(R.string.default_voice));
     }
 
 
@@ -127,9 +120,6 @@ public class MainActivity extends AppCompatActivity {
         aboutClicked = savedInstanceState.getBoolean("key_value", false);
 
     }
-
-
-
 
 }
 

@@ -47,12 +47,16 @@ public class DialActivity extends AppCompatActivity implements DefaultLifecycleO
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dial);
         editText = findViewById(R.id.editText);
-        SoundPlayer.getInstance(getApplicationContext());
         // Declare path to the directory on the filesystem where app-specific files are stored
         localDir = getApplicationContext().getFilesDir();
         // adding file-name to the end of path
         filePath = new File(localDir + "/" + SettingsActivity.getFilename(this));
 
+    }
+    @Override
+    public void onResume() {
+        super.onResume();
+        SoundPlayer.getInstance(getApplicationContext());
     }
     public void buttonClickEvent(View v) {
         phoneNo = editText.getText().toString();
