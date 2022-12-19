@@ -28,17 +28,13 @@ public class SoundPlayer extends AppCompatActivity {
     private static int soundPound;
     private static int soundStar;
     private static String voiceName;
-    private static SharedPreferences preferences;
-    Context context;
-    private static String nowVoice;
+    private static String activeVoice;
 
     String default_voice = Environment.getDataDirectory() + "/data/se.miun.jasv2000.dt031g.dialer/files/voices/";
 
-
     private SoundPlayer(Context context) {
 
-
-        nowVoice = voiceName;
+        activeVoice = voiceName;
         default_voice = default_voice + voiceName + "/";
 
 
@@ -61,9 +57,9 @@ public class SoundPlayer extends AppCompatActivity {
     }
 
     public static SoundPlayer getInstance(Context context) {
-        preferences = PreferenceManager.getDefaultSharedPreferences(context);
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
         voiceName = preferences.getString("Name", "mamacita_us");
-        if (soundPlayerInstance == null || !voiceName.equals(nowVoice)) {
+        if (soundPlayerInstance == null || !voiceName.equals(activeVoice)) {
             soundPlayerInstance = new SoundPlayer(context);
         }
         return soundPlayerInstance;

@@ -65,6 +65,10 @@
     <string name="message_zero">+</string>
     <string name="title_zero">0</string>
 
+    <string name="replace_star">%2A</string>
+    <string name="replace_pound">%23</string>
+
+    <string name="tel">tel:</string>
 
     <!-- Menu options -->
     <string name="menu_settings">Settings</string>
@@ -94,8 +98,26 @@
     <string name="key_name">Name</string>
     <string name="default_voice">mamacita_us</string>
 
+    <string name="new_file">Creating new file</string>
+
     <!-- Title -->
     <string name="settings_title">Settings</string>
     <string name="call_list_title">Call List</string>
+
+    <!-- Error -->
+    <string name="error_exception">Exception</string>
+    <string name="error_buttonpress">Error with pressing button: </string>
+    <string name="error_write_file">File write failed: </string>
+    <string name="error_error">Error: </string>
+
+
+    <!-- DownloadActivity -->
+    <string name="cookie">cookie</string>
+    <string name="user_agent">User-Agent</string>
+    <string name="downloading_file">Downloading File...</string>
+
+    <string name="default_value">default</string>
+
+
 
 </resources>

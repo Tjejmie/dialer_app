@@ -74,16 +74,14 @@ public class DownloadActivity extends AppCompatActivity {
                 request.setMimeType(mimeType);
                 fileName = url.substring(url.lastIndexOf('/') + 1);
                 String cookies = CookieManager.getInstance().getCookie(url);
-                request.addRequestHeader("cookie", cookies);
-                request.addRequestHeader("User-Agent", userAgent);
-                request.setDescription("Downloading File...");
+                request.addRequestHeader(getResources().getString(R.string.cookie), cookies);
+                request.addRequestHeader(getResources().getString(R.string.user_agent), userAgent);
+                request.setDescription(getResources().getString(R.string.downloading_file));
                 request.setTitle(URLUtil.guessFileName(url, contentDisposition, mimeType));
                 request.allowScanningByMediaScanner();
                 request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
 
                 new DownloadVoices().execute(urlPage + fileName);
-
-
 
             }});
 
@@ -101,7 +99,7 @@ public class DownloadActivity extends AppCompatActivity {
             pDialog = new ProgressDialog(DownloadActivity.this);
             pDialog.setTitle(R.string.downloading_title);
             pDialog.setMessage(fileName);
-            pDialog.setButton(ProgressDialog.BUTTON_NEGATIVE, "cancel", new DialogInterface.OnClickListener() {
+            pDialog.setButton(ProgressDialog.BUTTON_NEGATIVE, getResources().getString(R.string.cancel_message), new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
                     dialog.cancel();
@@ -109,8 +107,6 @@ public class DownloadActivity extends AppCompatActivity {
             });
             pDialog.setMax(100);
             pDialog.setIndeterminate(true);
-            //pDialog.setCancelable(false);
-
             pDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
             pDialog.show();
         }
@@ -159,13 +155,12 @@ public class DownloadActivity extends AppCompatActivity {
                     output.write(data, 0, count);
                 }
 
-
                 output.flush();
                 output.close();
                 input.close();
 
             } catch (Exception e) {
-                Log.e("Error: ", e.getMessage());
+                Log.e(getResources().getString(R.string.error_error), e.getMessage());
             }
             Util.unzip(new File(path + R.string.downloadFileName), new File(path));
 
@@ -189,10 +184,7 @@ public class DownloadActivity extends AppCompatActivity {
             else
                 Toast.makeText(getApplicationContext(),R.string.file_downloaded, Toast.LENGTH_SHORT).show();
         }
-
     }
-
-
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -203,7 +195,4 @@ public class DownloadActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
 
     }
-
-
-
 }

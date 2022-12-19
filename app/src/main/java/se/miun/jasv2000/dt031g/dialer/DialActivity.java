@@ -71,11 +71,11 @@ public class DialActivity extends AppCompatActivity implements DefaultLifecycleO
                     break;
                 case R.id.btncall:
 
-                    if (phoneNo.contains("#")){
-                        phoneNo = phoneNo.replace("#","%23");
+                    if (phoneNo.contains(getResources().getString(R.string.title_pound))){
+                        phoneNo = phoneNo.replace(getResources().getString(R.string.title_pound),getResources().getString(R.string.replace_pound));
                     }
-                    if (phoneNo.contains("✻")){
-                        phoneNo = phoneNo.replace("✻","%2A");
+                    if (phoneNo.contains(getResources().getString(R.string.title_star))){
+                        phoneNo = phoneNo.replace(getResources().getString(R.string.title_star),getResources().getString(R.string.replace_star));
                     }
 
                     if(SettingsActivity.shouldStoreNumbers(this)){
@@ -89,13 +89,13 @@ public class DialActivity extends AppCompatActivity implements DefaultLifecycleO
                     }
                     // If permission for call_phone already is accepted
                     else{
-                        callIntent.setData(Uri.parse("tel:"+phoneNo));
+                        callIntent.setData(Uri.parse(getResources().getString(R.string.tel)+phoneNo));
                         startActivity(callIntent);
                     }
                     break;
             }
         } catch (Exception ex) {
-            Log.e("Exception", "Error with pressing button: " + ex);
+            Log.e(getResources().getString(R.string.error_exception), getResources().getString(R.string.error_buttonpress) + ex);
         }
     }
 
@@ -108,11 +108,11 @@ public class DialActivity extends AppCompatActivity implements DefaultLifecycleO
         if (requestCode == 1) {// If permission is accepted
             if (grantResults.length > 0
                     && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                callIntent.setData(Uri.parse("tel:" + phoneNo));
+                callIntent.setData(Uri.parse(getResources().getString(R.string.tel) + phoneNo));
                 startActivity(callIntent);
                 // If permission is denied
             } else {
-                dialIntent.setData(Uri.parse("tel:" + phoneNo));
+                dialIntent.setData(Uri.parse(getResources().getString(R.string.tel) + phoneNo));
                 startActivity(dialIntent);
             }
         }
@@ -122,7 +122,7 @@ public class DialActivity extends AppCompatActivity implements DefaultLifecycleO
     private void saveNumber() {
             try {
                 if(!phoneNumberFileExist()){
-                    System.out.println("Creating new file");
+                    System.out.println(getResources().getString(R.string.new_file));
                     filePath.createNewFile();
                 }
                 if(!String.valueOf(editText.getText()).equals("")){
@@ -132,7 +132,7 @@ public class DialActivity extends AppCompatActivity implements DefaultLifecycleO
                 }
             } catch (IOException e) {
                 // If an IOException occurs, we just ignore it
-                Log.e("Exception", "File write failed: " + e);
+                Log.e(getResources().getString(R.string.error_exception), getResources().getString(R.string.error_write_file) + e);
             }
     }
 

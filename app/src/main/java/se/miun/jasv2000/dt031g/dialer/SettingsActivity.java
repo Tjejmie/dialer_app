@@ -78,7 +78,7 @@ public class SettingsActivity extends AppCompatActivity {
 
         private void getEntrieValues(CharSequence[] entries, CharSequence[] entryValues) {
             int i = 0;
-            entryValues[0] = "default";
+            entryValues[0] = getResources().getString(R.string.default_value);
             for (Object category : names) {
                 entries[i] = category.toString();
                 entryValues[i] = Integer.toString(i);
